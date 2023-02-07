@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "iamhere",
-    "slug": "iamhere",
+    "name": "I'm here",
+    "description": "App para cadastro de localização de clientes",
+    "slug":  "IAmHere",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,25 +10,32 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#243f4d"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 30000
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
+      "buildNumber": "1.0.0",
+      "bundleIdentifier": "com.iamhere",
       "supportsTablet": true
     },
     "android": {
+      "versionCode": 1,
+      "icon": "./assets/icon.png",
+      "package": "android.config.googleMaps.apiKey",
+      "config": {
+         "googleMaps": { "apiKey": "AIzaSyBmCWe3wRDMOT07OUJEXKUusMWbNEgcHaY" }
+      },
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#243f4d"
       }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     }
   }
 }

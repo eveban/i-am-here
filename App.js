@@ -1,20 +1,28 @@
+/* eslint-disable react/style-prop-object */
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { View } from 'react-native';
+import { useFonts, Righteous_400Regular } from '@expo-google-fonts/righteous';
+
+import Localization from './src/pages/Localization';
+import Loading from './src/components/Loading';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Righteous_400Regular,
+  });
+
+  if (!fontsLoaded) {
+    return <Loading />;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <View style={{ flex: 1 }}>
+        <Localization />
+        <StatusBar style="auto" translucent />
+      </View>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
